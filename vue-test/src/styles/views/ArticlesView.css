@@ -1,0 +1,127 @@
+/* Styles owned by views/ArticlesView.vue. */
+
+.articles-view {
+  width: min(calc(100% - 28px), 1560px);
+  min-height: clamp(640px, calc(100vh - 220px), 1040px);
+  margin: 0 auto;
+  padding: clamp(34px, 3.5vw, 54px) 0 clamp(70px, 6vw, 96px);
+}
+
+.articles-layout {
+  display: grid;
+  grid-template-columns: 278px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(28px, 3vw, 48px);
+}
+
+.articles-main-pane {
+  min-width: 0;
+}
+
+.articles-fixed-toolbar {
+  position: sticky;
+  z-index: 18;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 8px;
+  background: var(--paper);
+  pointer-events: none;
+}
+
+.articles-create-button {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(145deg, #d26724, #a73e0d);
+  box-shadow: 0 0 0 1px #d88959, 0 7px 20px rgba(99, 45, 17, 0.3);
+  font-size: 15px;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: transform 170ms ease;
+}
+
+.articles-create-button:hover {
+  transform: translateY(-4px) rotate(2deg);
+}
+
+.articles-create-button:focus-visible {
+  outline: 3px solid rgba(226, 135, 72, 0.36);
+  outline-offset: 3px;
+}
+
+.articles-create-button svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.articles-create-button span {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1040px) {
+  .articles-view {
+    width: min(calc(100% - 32px), 900px);
+  }
+
+  .articles-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .articles-fixed-toolbar {
+    top: 0;
+    height: 106px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .articles-view {
+    width: min(calc(100% - 24px), 460px);
+    padding-top: 26px;
+    padding-bottom: 72px;
+  }
+
+  .articles-fixed-toolbar {
+    height: 90px;
+  }
+
+  .articles-create-button {
+    width: 76px;
+    height: 76px;
+  }
+
+  .articles-create-button svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .articles-create-button span {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .articles-create-button,
+  .articles-fixed-toolbar {
+    transition-duration: 1ms;
+  }
+}

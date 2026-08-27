@@ -1,0 +1,218 @@
+/* Styles owned by views/PointsShopView.vue. Keep page-specific rules in this file. */
+
+.points-shop-view {
+  width: min(calc(100% - 32px), 1160px);
+  margin: 0 auto;
+  padding: clamp(24px, 3vw, 40px) 0 clamp(42px, 5vw, 66px);
+}
+
+.points-shop-frame {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(22px, 3vw, 34px);
+  background:
+    radial-gradient(circle at 8% 6%, rgba(255, 255, 255, 0.92), transparent 22%),
+    radial-gradient(circle at 96% 92%, rgba(234, 181, 105, 0.17), transparent 27%),
+    #fbf0e4;
+  border: 1px solid #e6c9a9;
+  border-radius: 29px;
+  box-shadow: 0 16px 38px rgba(102, 58, 28, 0.12);
+}
+
+.points-package-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(15px, 1.8vw, 22px);
+}
+
+.points-package-card {
+  --card-accent: #c9823f;
+  --card-accent-deep: #925127;
+  position: relative;
+  min-width: 0;
+  min-height: 300px;
+  padding: 21px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: #573421;
+  background: #fffaf3;
+  border: 1px solid #e2c19e;
+  border-radius: 22px;
+  box-shadow: 0 9px 21px rgba(98, 56, 27, 0.1);
+  cursor: pointer;
+  isolation: isolate;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.points-package-card:hover {
+  border-color: color-mix(in srgb, var(--card-accent) 66%, #e4c4a4);
+  box-shadow: 0 18px 34px rgba(94, 49, 21, 0.18);
+  transform: translateY(-7px);
+}
+
+.points-package-card:focus-visible {
+  outline-color: color-mix(in srgb, var(--card-accent) 45%, transparent);
+}
+
+.points-package-card.is-tier-2 {
+  --card-accent: #d6993e;
+  --card-accent-deep: #9d6626;
+}
+
+.points-package-card.is-tier-3 {
+  --card-accent: #dda743;
+  --card-accent-deep: #9d6d27;
+}
+
+.points-package-card.is-tier-4 {
+  --card-accent: #cf8b2f;
+  --card-accent-deep: #8d551c;
+}
+
+.points-package-card.is-tier-5 {
+  --card-accent: #dc9b28;
+  --card-accent-deep: #945e16;
+}
+
+.points-package-card.is-tier-6 {
+  --card-accent: #e6ae28;
+  --card-accent-deep: #8b5915;
+  border-color: #d9aa5f;
+}
+
+.points-package-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--card-accent-deep);
+}
+
+.points-package-value b {
+  font-size: clamp(43px, 4.3vw, 58px);
+  line-height: 1;
+}
+
+.points-package-value small {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.points-coin-stage {
+  position: relative;
+  width: 100%;
+  height: 128px;
+  margin: 4px 0 0;
+  display: grid;
+  place-items: center;
+}
+
+.points-coin-pile {
+  width: min(260px, 96%);
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-coin {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  flex: 0 0 68px;
+  place-items: center;
+  background: transparent;
+  border: 0;
+  filter: drop-shadow(0 7px 5px rgba(119, 71, 18, 0.2));
+  font-style: normal;
+}
+
+.points-coin + .points-coin {
+  margin-left: -34px;
+}
+
+.points-coin span {
+  font-size: 62px;
+  line-height: 1;
+}
+
+.points-package-action {
+  width: 100%;
+  padding-top: 13px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--card-accent-deep);
+  border-top: 1px dashed #dfc5a9;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.points-shop-message {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(22px, 3vw, 32px);
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #846049;
+  border-top: 1px solid rgba(216, 181, 145, 0.82);
+  text-align: center;
+}
+
+.points-shop-message p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.points-shop-message > span {
+  color: #c8793d;
+  font-size: 16px;
+}
+
+@media (max-width: 980px) {
+  .points-package-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .points-shop-view {
+    width: calc(100% - 20px);
+    padding: 20px 0 42px;
+  }
+
+  .points-shop-frame {
+    padding: 18px 14px 25px;
+    border-radius: 23px;
+  }
+
+  .points-package-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .points-package-card {
+    min-height: 292px;
+  }
+
+  .points-shop-message {
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .points-shop-message p {
+    max-width: 260px;
+    line-height: 1.75;
+  }
+}

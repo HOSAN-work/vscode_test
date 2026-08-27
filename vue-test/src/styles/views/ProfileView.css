@@ -1,0 +1,192 @@
+/* Styles owned by views/ProfileView.vue. Keep page-specific rules in this file. */
+
+.profile-view {
+  width: min(calc(100% - 32px), 1200px);
+  margin: 0 auto;
+  padding: clamp(30px, 4vw, 54px) 0 clamp(52px, 6vw, 82px);
+}
+
+.profile-view-back {
+  margin-bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  color: #8b5d40;
+  background: #faead7;
+  border: 1px solid #e3c39f;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 170ms ease, transform 170ms ease;
+  animation: profile-summary-fade-in 480ms ease backwards;
+}
+
+.profile-view-back:hover {
+  background: #f4dcc0;
+  transform: translateX(-3px);
+}
+
+.profile-view-back svg {
+  width: 18px;
+  height: 18px;
+}
+
+.profile-overview {
+  display: grid;
+  grid-template-columns: 224px minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(25px, 3.5vw, 46px);
+  animation: profile-summary-fade-in 480ms ease backwards;
+}
+
+.profile-tabs {
+  margin-top: 34px;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: rgba(255, 250, 242, 0.72);
+  border: 1px solid #ead4bd;
+  border-radius: 20px;
+  box-shadow: 0 7px 18px rgba(101, 58, 29, 0.06);
+  animation: profile-summary-fade-in 480ms ease 40ms backwards;
+}
+
+.profile-tab-content {
+  animation: profile-cards-rise-in 650ms cubic-bezier(0.22, 1, 0.36, 1) 90ms backwards;
+}
+
+@keyframes profile-summary-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes profile-cards-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-tabs button {
+  min-height: 57px;
+  padding: 11px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #76533e;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 170ms ease, border-color 170ms ease, box-shadow 170ms ease, color 170ms ease;
+}
+
+.profile-tabs button:hover {
+  color: #b95726;
+  background: rgba(255, 246, 235, 0.75);
+}
+
+.profile-tabs button.is-active {
+  color: #a95126;
+  background: #f7dfc4;
+  border-color: #dda46c;
+  box-shadow: 0 6px 13px rgba(147, 80, 37, 0.12);
+}
+
+.profile-tabs svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.9;
+}
+
+.profile-slide-left-enter-active,
+.profile-slide-left-leave-active,
+.profile-slide-right-enter-active,
+.profile-slide-right-leave-active {
+  transition: opacity 270ms ease, transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(44px);
+}
+
+.profile-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-35px);
+}
+
+.profile-slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-44px);
+}
+
+.profile-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(35px);
+}
+
+@media (max-width: 760px) {
+  .profile-view {
+    width: min(calc(100% - 24px), 620px);
+    padding-top: 24px;
+  }
+
+  .profile-overview {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .profile-tabs {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .profile-tabs button {
+    min-height: 54px;
+    padding-inline: 8px;
+    gap: 7px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile-tabs button {
+    flex-direction: column;
+    gap: 3px;
+    font-size: 13px;
+  }
+
+  .profile-tabs svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-view-back,
+  .profile-overview,
+  .profile-tabs,
+  .profile-tab-content {
+    animation-duration: 1ms;
+    animation-delay: 0ms;
+  }
+}

@@ -1,0 +1,63 @@
+/* Styles owned by components/profile/ProfileBatchLoader.vue. */
+
+.profile-batch-loader {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.profile-batch-loader > span:not(.sr-only) {
+  width: 9px;
+  height: 9px;
+  display: block;
+  background: #bd7544;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(132, 74, 37, 0.15);
+  animation: profile-batch-dot 900ms ease-in-out infinite;
+}
+
+.profile-batch-loader > span:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.profile-batch-loader > span:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.profile-batch-loader-fade-enter-active,
+.profile-batch-loader-fade-leave-active {
+  transition: opacity 180ms ease;
+}
+
+.profile-batch-loader-fade-enter-from,
+.profile-batch-loader-fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes profile-batch-dot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) scale(0.82);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-batch-loader > span:not(.sr-only) {
+    animation: none;
+    opacity: 0.75;
+  }
+
+  .profile-batch-loader-fade-enter-active,
+  .profile-batch-loader-fade-leave-active {
+    transition-duration: 1ms;
+  }
+}

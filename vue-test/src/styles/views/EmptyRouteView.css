@@ -1,0 +1,8 @@
+/* Styles owned by blank route views. Keep page/component-specific rules in this file. */
+
+.empty-route-page {
+  min-height: clamp(430px, calc(100vh - 290px), 780px);
+  flex: 1;
+  background: var(--paper);
+}
+

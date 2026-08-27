@@ -1,0 +1,181 @@
+/* Styles owned by components/profile/ProfileArticlesTab.vue. Keep component-specific rules in this file. */
+
+.profile-articles-panel {
+  padding-top: 28px;
+}
+
+.profile-article-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.profile-article-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fffaf3;
+  border: 1px solid #e6cdb4;
+  border-radius: 19px;
+  box-shadow: 0 9px 20px rgba(98, 56, 27, 0.09);
+  transition: box-shadow 190ms ease, transform 190ms ease;
+}
+
+.profile-article-edit-card {
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 13px;
+  color: inherit;
+  background: #fbefe0;
+  text-decoration: none;
+}
+
+.profile-article-edit-card > svg {
+  width: 78px;
+  height: 78px;
+  color: #ad5b2f;
+}
+
+.profile-article-edit-card > strong {
+  color: #8b5130;
+  font-size: 14px;
+}
+
+.profile-article-card:hover {
+  box-shadow: 0 15px 28px rgba(98, 56, 27, 0.15);
+  transform: translateY(-5px);
+}
+
+.profile-article-image {
+  position: relative;
+  height: 176px;
+  overflow: hidden;
+  background: #f1e1d0;
+}
+
+.profile-article-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.profile-article-card:hover img {
+  transform: scale(1.04);
+}
+
+.profile-article-image span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  color: #3c7357;
+  background: rgba(228, 244, 230, 0.93);
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.profile-article-image span.is-food {
+  color: #a85b2e;
+  background: rgba(255, 236, 215, 0.94);
+}
+
+.profile-article-image span.is-training {
+  color: #397898;
+  background: rgba(222, 241, 249, 0.94);
+}
+
+.profile-article-image span.is-beauty {
+  color: #805690;
+  background: rgba(241, 228, 246, 0.94);
+}
+
+.profile-article-image span.is-rescue {
+  color: #a34c4d;
+  background: rgba(252, 226, 226, 0.94);
+}
+
+.profile-article-image span.is-daily {
+  color: #8a6845;
+  background: rgba(248, 235, 215, 0.94);
+}
+
+.profile-article-copy {
+  min-height: 114px;
+  padding: 13px 14px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-article-copy h3 {
+  margin: 0;
+  color: #543421;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.profile-article-likes {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  color: #c45f2e;
+  font-size: 13px;
+}
+
+.profile-article-likes svg {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-article-load-trigger {
+  width: 100%;
+  min-height: 1px;
+}
+
+.profile-article-lazy-enter-active {
+  transition: opacity 360ms ease, transform 430ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-article-lazy-enter-from {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@media (max-width: 1020px) {
+  .profile-article-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .profile-article-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-articles-panel {
+    padding-top: 20px;
+  }
+
+  .profile-article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-article-image {
+    height: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-article-lazy-enter-active {
+    transition-duration: 1ms;
+  }
+}

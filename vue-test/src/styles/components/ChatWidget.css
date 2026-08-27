@@ -1,0 +1,206 @@
+/* Styles owned by components/common/ChatWidget.vue. Keep page/component-specific rules in this file. */
+
+.chat-launcher {
+  position: fixed;
+  left: 26px;
+  bottom: 27px;
+  z-index: 80;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  color: white;
+  background: linear-gradient(145deg, #d26724, #a73e0d);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #d88959, 0 7px 20px rgba(99, 45, 17, 0.3);
+  cursor: pointer;
+  transition: transform 170ms ease;
+}
+
+.chat-launcher:hover {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.chat-launcher svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: white;
+}
+
+.chat-launcher span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.chat-launcher i {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  width: 13px;
+  height: 13px;
+  background: #7bc76b;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.chat-panel {
+  position: fixed;
+  left: 28px;
+  bottom: 132px;
+  z-index: 90;
+  width: min(360px, calc(100vw - 42px));
+  overflow: hidden;
+  background: #fffaf4;
+  border: 1px solid #e3c7aa;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(82, 44, 23, 0.25);
+  opacity: 0;
+  transform: translateY(14px) scale(0.96);
+  transform-origin: bottom left;
+  visibility: hidden;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+}
+
+.chat-panel.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.chat-header {
+  padding: 16px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background: linear-gradient(135deg, #9b5630, #c76b34);
+}
+
+.chat-header > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.chat-header > div > span {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #fff4e5;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.chat-header strong,
+.chat-header small {
+  display: block;
+}
+
+.chat-header small {
+  margin-top: 2px;
+  color: #ffeadc;
+  font-size: 11px;
+}
+
+.chat-close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.chat-close svg {
+  width: 23px;
+  height: 23px;
+}
+
+.chat-body {
+  height: 210px;
+  padding: 20px 17px;
+  overflow-y: auto;
+  background: #fffaf4;
+}
+
+.chat-body p {
+  width: 82%;
+  padding: 11px 14px;
+  margin: 0 0 10px;
+  background: #f2e2d1;
+  border-radius: 15px 15px 15px 4px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.chat-body p.is-user {
+  margin-left: auto;
+  color: white;
+  background: #a76138;
+  border-radius: 15px 15px 4px 15px;
+}
+
+.chat-form {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #ead8c4;
+}
+
+.chat-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px 13px;
+  background: white;
+  border: 1px solid #e2cab3;
+  border-radius: 999px;
+  outline: 0;
+}
+
+.chat-form button {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #ae5d31;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.chat-form button svg {
+  width: 21px;
+  height: 21px;
+}
+
+@media (max-width: 650px) {
+  .chat-launcher {
+      left: 17px;
+      bottom: 18px;
+      width: 76px;
+      height: 76px;
+    }
+  
+  .chat-launcher svg {
+      width: 28px;
+      height: 28px;
+    }
+  
+  .chat-launcher span {
+      font-size: 13px;
+    }
+  
+  .chat-panel {
+      left: 16px;
+      bottom: 105px;
+    }
+}
+
