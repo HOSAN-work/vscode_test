@@ -1,0 +1,270 @@
+/* Styles owned by components/layout/SiteHeader.vue. Keep page/component-specific rules in this file. */
+
+.site-header {
+  position: relative;
+  z-index: 50;
+  margin-bottom: 0;
+  background: var(--bar);
+  border-bottom: 1px solid #ecd8b7;
+  box-shadow: 0 6px 16px rgba(135, 91, 38, 0.06);
+}
+
+.header-inner {
+  position: relative;
+  width: 100%;
+  min-height: 144px;
+  padding-inline: clamp(16px, 1.8vw, 28px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(12px, 1vw, 20px);
+}
+
+.brand {
+  width: 280px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  justify-self: start;
+}
+
+.brand img {
+  display: block;
+  width: 320px;
+  max-width: none;
+  max-height: 128px;
+  object-fit: contain;
+  transform: translateX(-8.5%);
+}
+
+.main-nav {
+  position: relative;
+  left: -16px;
+  width: calc(100% + 32px);
+  max-width: 1040px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-self: center;
+  gap: 4px;
+}
+
+.nav-link {
+  position: relative;
+  min-height: 88px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: var(--brown-950);
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.nav-link svg {
+  width: 36px;
+  height: 36px;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: #a74311;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.header-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  margin-left: 30px;
+}
+
+.account {
+  position: relative;
+}
+
+.icon-button,
+.menu-toggle {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.icon-button {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: inline-grid;
+  place-items: center;
+}
+
+.icon-button svg {
+  width: 36px;
+  height: 36px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1320px) {
+  .header-inner {
+      width: 100%;
+      padding-inline: 22px;
+      grid-template-columns: 250px minmax(0, 1fr) auto;
+      column-gap: 10px;
+    }
+  
+  .brand {
+      width: 250px;
+    }
+  
+  .brand img {
+      width: 270px;
+    }
+  
+  .nav-link {
+      gap: 8px;
+      font-size: 21px;
+    }
+  
+  .main-nav {
+      gap: 4px;
+    }
+  
+  .nav-link svg {
+      width: 31px;
+      height: 31px;
+    }
+}
+
+@media (max-width: 1080px) {
+  .header-inner {
+      min-height: 100px;
+      padding-inline: 22px;
+      grid-template-columns: 1fr auto;
+    }
+  
+  .brand {
+      width: 210px;
+    }
+  
+  .brand img {
+      width: 195px;
+      transform: none;
+    }
+  
+  .header-actions {
+      position: relative;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 11px;
+      margin-left: 0;
+    }
+  
+  .account {
+      justify-self: auto;
+    }
+  
+  .main-nav {
+      position: absolute;
+      top: 84px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      padding: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      background: rgba(255, 250, 243, 0.98);
+      border: 1px solid #ead2b9;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(-8px);
+      visibility: hidden;
+      transition: opacity 170ms ease, transform 170ms ease, visibility 170ms ease;
+    }
+  
+  .main-nav.is-open {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  
+  .nav-link {
+      min-height: 65px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      font-size: 13px;
+    }
+  
+  .nav-link::after {
+      bottom: 2px;
+    }
+  
+  .menu-toggle {
+      display: inline-grid;
+      order: -1;
+    }
+}
+
+@media (max-width: 650px) {
+  .header-inner {
+      width: 100%;
+      min-height: 84px;
+      padding-inline: 12px;
+      gap: 8px;
+    }
+  
+  .brand {
+      width: 160px;
+    }
+  
+  .brand img {
+      width: 160px;
+    }
+  
+  .header-actions {
+      gap: 7px;
+    }
+  
+  .main-nav {
+      top: 74px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
+

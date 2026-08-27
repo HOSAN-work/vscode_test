@@ -1,0 +1,193 @@
+/* Styles owned by components/common/ToastContainer.vue. Keep page/component-specific rules in this file. */
+
+.point-toast-stack {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 1500;
+  width: min(390px, calc(100vw - 38px));
+  display: grid;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.point-toast-card {
+  --toast-accent: #7eaa5f;
+  position: relative;
+  min-height: 112px;
+  padding: 17px 47px 17px 16px;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+  color: #543728;
+  background:
+    radial-gradient(circle at 92% 15%, rgba(255, 255, 255, 0.9), transparent 27%),
+    linear-gradient(145deg, #fffcf7, #f8ead8);
+  border: 1px solid #dfbf9d;
+  border-left: 5px solid var(--toast-accent);
+  border-radius: 21px;
+  box-shadow: 0 18px 42px rgba(63, 37, 22, 0.24);
+  pointer-events: auto;
+}
+
+.point-toast-card.is-deduction {
+  --toast-accent: #bd7048;
+}
+
+.point-toast-icon {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  background: #fff7e9;
+  border: 1px solid #e6c9a6;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 4px rgba(246, 226, 199, 0.45);
+}
+
+.point-toast-icon span {
+  font-size: 31px;
+}
+
+.point-toast-icon i {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  background: #fffaf1;
+  border: 2px solid #dfbc96;
+  border-radius: 50%;
+  font-size: 13px;
+  font-style: normal;
+}
+
+.point-toast-copy {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.point-toast-copy small {
+  color: #a8673d;
+  font-family: "Kiwi Maru", "Noto Sans TC", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.point-toast-copy strong {
+  overflow: hidden;
+  color: #5e3e2d;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.point-toast-copy p {
+  margin: 2px 0 0;
+  color: #775643;
+  font-size: 13px;
+}
+
+.point-toast-copy p b {
+  margin-left: 3px;
+  color: var(--toast-accent);
+  font-size: 19px;
+}
+
+.point-toast-card > button {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: #886450;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.point-toast-card > button:hover {
+  color: #a24e22;
+  background: rgba(237, 213, 188, 0.55);
+}
+
+.point-toast-card > button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.point-toast-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--toast-accent);
+  transform-origin: left;
+  animation: point-toast-progress var(--toast-duration) linear forwards;
+}
+
+@keyframes point-toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.point-toast-enter-active,
+.point-toast-leave-active {
+  transition: opacity 220ms ease, transform 260ms ease;
+}
+
+.point-toast-enter-from,
+.point-toast-leave-to {
+  opacity: 0;
+  transform: translateX(30px) scale(0.96);
+}
+
+.point-toast-leave-active {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.point-toast-move {
+  transition: transform 260ms ease;
+}
+
+@media (max-width: 650px) {
+  .point-toast-stack {
+      right: 12px;
+      bottom: 14px;
+      width: calc(100vw - 24px);
+    }
+  
+  .point-toast-card {
+      min-height: 102px;
+      padding: 14px 43px 14px 13px;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 12px;
+      border-radius: 18px;
+    }
+  
+  .point-toast-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+    }
+}
+

@@ -1,0 +1,57 @@
+/* Styles owned by components/header/HeaderAvatar.vue. Keep page/component-specific rules in this file. */
+
+.account-trigger {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.account-trigger {
+  min-width: 0;
+  width: 78px;
+  height: 78px;
+  padding: 7px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 249, 241, 0.84);
+  border: 1px solid #ead6c1;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.account-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.account-trigger img {
+  width: 63px;
+  height: 63px;
+  object-fit: cover;
+  border: 3px solid #fff6e8;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(77, 42, 24, 0.2);
+}
+
+@media (max-width: 1320px) {
+  .account-trigger {
+      width: 72px;
+      height: 72px;
+    }
+}
+
+@media (max-width: 650px) {
+  .account-trigger {
+      min-width: auto;
+      width: 52px;
+      height: 52px;
+      padding: 4px;
+    }
+  
+  .account-trigger img {
+      width: 44px;
+      height: 44px;
+    }
+}
+

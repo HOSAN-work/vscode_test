@@ -1,0 +1,175 @@
+/* Styles owned by App.vue. Keep page/component-specific rules in this file. */
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+}
+
+.app-main {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-x: clip;
+}
+
+.auth-slide-left-enter-active,
+.auth-slide-left-leave-active,
+.auth-slide-right-enter-active,
+.auth-slide-right-leave-active {
+  width: 100%;
+  transition: opacity 680ms ease, transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.app-main > .auth-slide-left-enter-active,
+.app-main > .auth-slide-right-enter-active {
+  position: relative;
+  z-index: 2;
+}
+
+.app-main > .auth-slide-left-leave-active,
+.app-main > .auth-slide-right-leave-active {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.auth-slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(12%);
+}
+
+.auth-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-12%);
+}
+
+.auth-slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-12%);
+}
+
+.auth-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(12%);
+}
+
+.profile-route-left-enter-active,
+.profile-route-left-leave-active,
+.profile-route-right-enter-active,
+.profile-route-right-leave-active {
+  width: 100%;
+  transition: opacity 500ms ease, transform 590ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.app-main > .profile-route-left-enter-active,
+.app-main > .profile-route-right-enter-active {
+  position: relative;
+  z-index: 2;
+}
+
+.app-main > .profile-route-left-leave-active,
+.app-main > .profile-route-right-leave-active {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.profile-route-left-enter-from {
+  opacity: 0;
+  transform: translateX(10%);
+}
+
+.profile-route-left-leave-to {
+  opacity: 0;
+  transform: translateX(-10%);
+}
+
+.profile-route-right-enter-from {
+  opacity: 0;
+  transform: translateX(-10%);
+}
+
+.profile-route-right-leave-to {
+  opacity: 0;
+  transform: translateX(10%);
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active,
+.page-rise-enter-active,
+.page-rise-leave-active,
+.team-page-enter-active,
+.team-page-leave-active {
+  width: 100%;
+  will-change: opacity, transform;
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 460ms ease;
+}
+
+.page-rise-enter-active,
+.page-rise-leave-active {
+  transition: opacity 520ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.team-page-enter-active {
+  transition: opacity 350ms ease;
+}
+
+.team-page-leave-active {
+  transition: opacity 260ms ease;
+}
+
+.app-main > .page-fade-enter-active,
+.app-main > .page-rise-enter-active,
+.app-main > .team-page-enter-active {
+  position: relative;
+  z-index: 2;
+}
+
+.app-main > .page-fade-leave-active,
+.app-main > .page-rise-leave-active,
+.app-main > .team-page-leave-active {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to,
+.team-page-enter-from,
+.team-page-leave-to {
+  opacity: 0;
+}
+
+.page-rise-enter-from {
+  opacity: 0;
+  transform: translateY(34px);
+}
+
+.page-rise-leave-to {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fade-enter-active,
+  .page-fade-leave-active,
+  .page-rise-enter-active,
+  .page-rise-leave-active,
+  .team-page-enter-active,
+  .team-page-leave-active {
+    transition-duration: 1ms;
+  }
+}

@@ -1,0 +1,48 @@
+/* Styles owned by components/profile/ProfileFollowButton.vue. */
+
+.profile-follow-button {
+  min-height: 42px;
+  padding: 9px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #fffaf3;
+  background: #ba6737;
+  border: 1px solid #a95529;
+  border-radius: 12px;
+  box-shadow: 0 7px 15px rgba(145, 73, 32, 0.16);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: color 170ms ease, background 170ms ease, border-color 170ms ease, transform 170ms ease;
+}
+
+.profile-follow-button:hover {
+  background: #a9562b;
+  transform: translateY(-2px);
+}
+
+.profile-follow-button.is-following {
+  color: #9b4f2a;
+  background: #fae9d7;
+  border-color: #dfb58f;
+  box-shadow: none;
+}
+
+.profile-follow-button.is-following:hover {
+  background: #f4d8bd;
+  border-color: #cf966b;
+}
+
+.profile-follow-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 480px) {
+  .profile-follow-button {
+    min-height: 40px;
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,75 @@
+/* Styles owned by views/DiscoverView.vue. Keep page-specific rules in this file. */
+
+.discover-view {
+  display: flex;
+  flex-direction: column;
+  width: min(calc(100% - 32px), 1440px);
+  min-height: clamp(580px, calc(100vh - 220px), 900px);
+  flex: 1;
+  margin: 0 auto;
+  padding: clamp(28px, 3vw, 44px) 0 clamp(46px, 5vw, 72px);
+}
+
+.discover-title {
+  margin: 0 0 clamp(18px, 2vw, 28px);
+  color: #6f4327;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.discover-map-frame {
+  position: relative;
+  width: 100%;
+  min-height: clamp(540px, calc(100vh - 260px), 820px);
+  overflow: hidden;
+  border: 1px solid rgba(205, 161, 116, 0.78);
+  border-radius: 28px;
+  background: #fbf0e4;
+  box-shadow: 0 16px 38px rgba(109, 63, 31, 0.13);
+}
+
+.discover-map-frame::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border: 7px solid rgba(255, 249, 239, 0.66);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.discover-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  border: 0;
+  background: #f4e7d8;
+}
+
+@media (max-width: 650px) {
+  .discover-view {
+    width: calc(100% - 20px);
+    min-height: 600px;
+    padding-top: 18px;
+    padding-bottom: 34px;
+  }
+
+  .discover-title {
+    margin-bottom: 16px;
+    font-size: clamp(27px, 8vw, 34px);
+    letter-spacing: 0.04em;
+  }
+
+  .discover-map-frame {
+    min-height: calc(100vh - 150px);
+    border-radius: 21px;
+  }
+
+  .discover-map-frame::before {
+    border-width: 4px;
+  }
+}

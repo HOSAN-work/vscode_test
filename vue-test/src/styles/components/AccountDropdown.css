@@ -1,0 +1,177 @@
+/* Styles owned by components/header/AccountDropdown.vue. Keep page/component-specific rules in this file. */
+
+.account-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  width: 238px;
+  padding: 18px 17px 12px;
+  background: rgba(255, 251, 246, 0.97);
+  border: 1px solid #e4c9ad;
+  border-radius: 24px;
+  box-shadow: 0 16px 35px rgba(82, 43, 22, 0.18);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top right;
+  visibility: hidden;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.account-menu.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.account-summary {
+  padding: 15px 14px;
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #fff9f0, #f8e6d4);
+  border: 1px solid #e9ceb3;
+  border-radius: 22px;
+}
+
+.account-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  white-space: nowrap;
+}
+
+.account-summary strong {
+  font-size: 16px;
+}
+
+.account-summary span {
+  font-size: 14px;
+}
+
+.account-summary b {
+  font-size: 14px;
+}
+
+.account-points {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.account-points em {
+  min-width: 38px;
+  color: #68452f;
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+}
+
+.account-points.is-updating em {
+  animation: account-points-balance-pop 1100ms ease both;
+}
+
+.account-points-delta {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  z-index: 2;
+  padding: 4px 9px;
+  color: white;
+  background: #6e9b52;
+  border: 2px solid #fff8ee;
+  border-radius: 999px;
+  box-shadow: 0 7px 15px rgba(80, 112, 57, 0.23);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+  transform: translateX(-50%);
+  animation: account-points-delta-float 1800ms ease both;
+}
+
+.account-points-delta.is-negative {
+  background: #b66a45;
+  box-shadow: 0 7px 15px rgba(149, 75, 43, 0.23);
+}
+
+@keyframes account-points-balance-pop {
+  0%,
+  20% {
+    color: #68452f;
+    transform: scale(1);
+  }
+
+  38% {
+    color: #b65d25;
+    transform: scale(1.2);
+  }
+
+  62% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    color: #68452f;
+    transform: scale(1);
+  }
+}
+
+@keyframes account-points-delta-float {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 9px) scale(0.65);
+  }
+
+  20%,
+  67% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -13px) scale(0.9);
+  }
+}
+
+.account-action {
+  width: 100%;
+  padding: 15px 7px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border: 0;
+  border-bottom: 1px dashed #ddc8b3;
+  background: transparent;
+  font-size: 16px;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 150ms ease, padding-left 150ms ease;
+}
+
+.account-action:last-child {
+  border-bottom: 0;
+}
+
+.account-action:hover {
+  padding-left: 12px;
+  color: var(--orange);
+}
+
+.account-action svg {
+  width: 25px;
+  height: 25px;
+  color: #a8471a;
+}
+
+@media (max-width: 650px) {
+  .account-menu {
+      right: 0;
+      width: min(238px, calc(100vw - 40px));
+    }
+}
+

@@ -1,0 +1,90 @@
+/* Styles owned by components/profile/ProfileBio.vue. Keep component-specific rules in this file. */
+
+.profile-bio {
+  min-width: 0;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profile-bio-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profile-bio-heading > div > span {
+  color: #bf6b39;
+  font-family: "Kiwi Maru", "Noto Sans TC", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.profile-bio h1 {
+  margin: 3px 0 0;
+  color: #4e2d1d;
+  font-family: "Kiwi Maru", "Noto Sans TC", sans-serif;
+  font-size: clamp(36px, 4vw, 50px);
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.profile-bio-id {
+  color: #b46c42;
+  font-size: 0.58em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.profile-bio-introduction {
+  padding: 19px 22px;
+  background: rgba(255, 250, 243, 0.7);
+  border: 1px solid #ead6c0;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(100, 57, 29, 0.07);
+}
+
+.profile-bio-introduction strong {
+  color: #c05e2c;
+  font-size: 14px;
+}
+
+.profile-bio-introduction p {
+  max-width: 790px;
+  margin: 7px 0 0;
+  color: #6e5040;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .profile-bio {
+    width: 100%;
+    padding: 0;
+  }
+
+  .profile-bio-heading {
+    align-items: center;
+  }
+
+  .profile-bio h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-bio-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-bio-introduction {
+    padding: 17px;
+  }
+}

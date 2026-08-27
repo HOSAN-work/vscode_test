@@ -1,0 +1,50 @@
+/* Styles owned by components/profile/ProfileMemberCard.vue. */
+
+.profile-member-card {
+  min-width: 0;
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: inherit;
+  background: #fffaf3;
+  border: 1px solid #e6cdb4;
+  border-radius: 20px;
+  box-shadow: 0 8px 19px rgba(98, 56, 27, 0.08);
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.profile-member-card:hover {
+  border-color: #dab38b;
+  box-shadow: 0 13px 25px rgba(98, 56, 27, 0.13);
+  transform: translateY(-3px);
+}
+
+.profile-member-card-name {
+  min-width: 0;
+}
+
+.profile-member-card strong {
+  overflow: hidden;
+  color: #68412a;
+  font-size: 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-member-card strong span {
+  color: #b36a3e;
+  font-size: 0.78em;
+  font-weight: 800;
+}
+
+@media (max-width: 420px) {
+  .profile-member-card {
+    padding: 13px 14px;
+  }
+
+  .profile-member-card strong {
+    font-size: 18px;
+  }
+}

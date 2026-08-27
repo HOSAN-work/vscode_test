@@ -1,0 +1,45 @@
+/* Styles owned by views/ArticlesEditView.vue. */
+
+.articles-manage-view {
+  width: min(calc(100% - 32px), 1120px);
+  min-height: 620px;
+  margin: 0 auto;
+  padding: 38px 0 72px;
+}
+
+.articles-manage-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid #e3c39f;
+  border-radius: 10px;
+  color: #8b5d40;
+  background: #faead7;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 170ms ease, transform 170ms ease;
+}
+
+.articles-manage-back:hover {
+  background: #f4dcc0;
+  transform: translateX(-3px);
+}
+
+.articles-manage-back svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+@media (max-width: 600px) {
+  .articles-manage-view {
+    width: min(calc(100% - 24px), 520px);
+    padding-top: 26px;
+  }
+}
